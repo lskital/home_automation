@@ -1,0 +1,30 @@
+#!/bin/bash
+
+HOST=10.0.0.200
+SSH_CMD="ssh root@${HOST} /root/hcontrol.py"
+
+case "$QUERY_STRING" in
+	on|off|boost|flip|force_off|boost_cancel|status)
+		result="$($SSH_CMD $QUERY_STRING)"
+		;;
+	*)
+		result="Unknown command: $QUERY_STRING"
+		;;
+esac
+
+echo "Content-type: text/html"
+echo ""
+
+echo '<html>'
+echo '<head>'
+echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
+echo '<title>Heat control</title>'
+echo '</head>'
+echo '<body>'
+echo '<pre>'
+echo "$result"
+echo '</pre>'
+echo '</body>'
+echo '</html>'
+
+exit 0
