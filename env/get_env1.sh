@@ -17,7 +17,8 @@ def getEm1Values(uri):
 
 values = getEm1Values(ENV1)
 
-print ("N:%s:%s:%s" % (values['G2T'], values['G1T'], values['G2H']))
+print(values)
+#print ("N:%s:%s:%s" % (values['G2T'], values['G1T'], values['G2H']))
 
 #print "Attic   Temp: ", values['G1T']
 #print "Humidity    : ", values['G2H']

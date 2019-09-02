@@ -1,0 +1,1 @@
+rrdtool create temperature.rrd --step 60 DS:temp:GAUGE:600:-50:120 RRA:AVERAGE:0.5:1:1051200 
